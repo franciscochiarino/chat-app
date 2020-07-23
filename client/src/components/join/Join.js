@@ -13,7 +13,9 @@ export default function Join({setName}) {
     <div className="Join">
       <h1>Welcome!</h1>
       <form onSubmit={handleSubmit} className="join-form">
-        <input type="text" placeholder="Name" value={nameInput} onChange={(e) => setNameInput(e.target.value)} />
+        <label htmlFor="name">Choose your nickname:
+          <input required type="text" placeholder="Name" value={nameInput} onChange={(e) => setNameInput(e.target.value)} />
+        </label>
         <button type="submit">Join</button>
       </form>
     </div>

@@ -2,6 +2,7 @@
 $blue: #0080f8;
 $dark-blue: #0067c7;
 $light-grey: #e2e1e7;
+$input-height: 40px;
 
 // Reset
 * {
@@ -37,6 +38,7 @@ h1 {
   .inner-container {
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 }
 
@@ -107,9 +109,10 @@ h1 {
 
 // Input
 .Input {
-  height: 40px;
+  height: $input-height;
 
   .chat-form {
+    display: flex;
     height: 100%;
 
     input,
@@ -118,7 +121,10 @@ h1 {
     }
   }
   input {
-    width: 80%;
+    width: 70%;
+  }
+  .emoji-btn {
+    width: 10%;
   }
   button {
     width: 20%;
@@ -126,4 +132,10 @@ h1 {
     border: 3px solid $dark-blue;
     color: #fff;
   }
+}
+
+// Emoji Picker
+.emoji-mart {
+  position: absolute;
+  bottom: $input-height;
 }

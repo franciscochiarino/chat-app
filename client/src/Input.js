@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'emoji-mart/css/emoji-mart.css';
-import { Picker, getEmojiDataFromNative } from 'emoji-mart';
+import { Picker, Emoji } from 'emoji-mart';
 
 export default function Input({ text, setText, sendMessage }) {
+  const [emojiWindow, setEmojiWindow] = useState(true);
+
+  const handleEmojiWindow = () => {
+    console.log('hola')
+    setEmojiWindow(!emojiWindow);
+  }
+
   return (
     <>
-    <Picker set="apple" theme="light" style={{fontFamily: 'initial'}} onSelect={emoji => setText(text + emoji.native)} />
-    <div className="Input">
-      <form onSubmit={sendMessage} className="chat-form">
-        <input type="text" placeholder="Type a message..." value={text} onChange={(e) => setText(e.target.value)} />
-        <button type="submit">Send</button>
-      </form>
-    </div>
+      { emojiWindow ? 
+        <Picker className="Picker" set="apple" theme="light" style={{fontFamily: 'initial'}} onSelect={emoji => setText(text + emoji.native)} />
+      : null }
+      <div className="Input">
+        <form onSubmit={sendMessage} className="chat-form">
+          <button type="button" className="emoji-btn" onClick={handleEmojiWindow}><Emoji emoji={{ id: 'grinning'}} size={20} /></button>
+          <input type="text" placeholder="Type a message..." value={text} onChange={(e) => setText(e.target.value)} />
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function Message({ message: { user, text }, name }) {
   // const [isSentByUser, setIsSentByUser] = useState(false);

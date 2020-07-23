@@ -8,8 +8,6 @@ export default function Message({ message: { user, text }, name }) {
   const sanitizedName = trimmedName[0].toLocaleUpperCase() + name.substring(1).toLocaleLowerCase();
 
   let isSentByUser = false;
-  console.log('name: ', name)
-  console.log('user: ', user)
 
   if (sanitizedUser === sanitizedName) {
      isSentByUser = true;

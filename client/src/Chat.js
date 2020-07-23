@@ -4,19 +4,13 @@ import InfoBar from './InfoBar';
 import Input from './Input';
 import Messages from './Messages';
 
-let socket;
+const socket = io();
 
 export default function Chat({ name, room, chatWindow, setChatWindow }) {
   const [text, setText] = useState('');
   const [messages, setMessages] = useState([]);
 
-  // Set server address
-  const endpoint = 'https://chat-app-fran.herokuapp.com/';
-
   useEffect(() => {
-    console.log('[useEffect on Chat is running]')
-    // Connect to endpoint
-    socket = io(endpoint);
 
     // Emit JOIN
     socket.emit('join', {name, room}, (error) => {
@@ -33,21 +27,18 @@ export default function Chat({ name, room, chatWindow, setChatWindow }) {
       // Turn off this socket
       socket.off();
     }
-  }, [endpoint, name, room])
+  }, [name, room])
 
   useEffect(() => {
     // Recieve MESSAGE
     socket.on('message', (message) => {
       setMessages((messages) => [...messages, message]);
     })
-    if (messages.length >= 50) {
-      removeFirst();
-    }
-    
-  }, [messages.length]);
+  }, []);
 
   const sendMessage = e => {
     e.preventDefault();
+    console.log('sendMessage')
     if (text) {
       // Emit SENDMESSAGE
       socket.emit('sendMessage', text, () => {

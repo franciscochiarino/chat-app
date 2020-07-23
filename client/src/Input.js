@@ -3,10 +3,9 @@ import 'emoji-mart/css/emoji-mart.css';
 import { Picker, Emoji } from 'emoji-mart';
 
 export default function Input({ text, setText, sendMessage }) {
-  const [emojiWindow, setEmojiWindow] = useState(true);
+  const [emojiWindow, setEmojiWindow] = useState(false);
 
   const handleEmojiWindow = () => {
-    console.log('hola')
     setEmojiWindow(!emojiWindow);
   }
 
@@ -19,7 +18,7 @@ export default function Input({ text, setText, sendMessage }) {
         <form onSubmit={sendMessage} className="chat-form">
           <button type="button" className="emoji-btn" onClick={handleEmojiWindow}><Emoji emoji={{ id: 'grinning'}} size={20} /></button>
           <input type="text" placeholder="Type a message..." value={text} onChange={(e) => setText(e.target.value)} />
-          <button type="submit">Send</button>
+          <button type="submit" onClick={() => setEmojiWindow(false)}>Send</button>
         </form>
       </div>
     </>

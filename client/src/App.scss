@@ -1,0 +1,129 @@
+// Variables
+$blue: #0080f8;
+$dark-blue: #0067c7;
+$light-grey: #e2e1e7;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background: #f7f7f7;
+}
+
+// Typography
+h1 {
+  font-size: 1.5rem;
+}
+
+// App
+.App {
+  max-width: 450px;
+  min-width: 250px;
+  height: 80vh;
+  margin: 0 auto;
+  margin-top: 4rem;
+  background: #fff;
+
+  .outer-container,
+  .inner-container {
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .inner-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Join
+.Join {
+  align-self: center;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+ .join-form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   button {
+     margin-top: 1rem;
+   }
+ }
+}
+
+// InfoBar
+.InfoBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $blue;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  height: 50px;
+  z-index: 10;
+}
+
+// Messages
+.Messages {
+  display: flex;
+  flex-direction: column-reverse;
+  color: #000;
+  height: calc(100% - 60px - 30px);
+}
+
+// Message
+.justify-right {
+  text-align: right;
+  margin-right: 0.5rem;
+}
+.justify-left {
+  text-align: left;
+  margin-left: 0.5rem;
+}
+.message-box {
+  display: inline-block;
+  max-width: 300px;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.bg-dark {
+  background: $blue;
+  border-radius: 8px 8px 0 8px;
+  color: #fff;
+}
+.bg-light {
+  background: $light-grey;
+  border-radius: 8px 8px 8px 0;
+}
+
+// Input
+.Input {
+  height: 40px;
+
+  .chat-form {
+    height: 100%;
+
+    input,
+    button {
+      height: 100%;
+    }
+  }
+  input {
+    width: 80%;
+  }
+  button {
+    width: 20%;
+    background: $blue;
+    border: 3px solid $dark-blue;
+    color: #fff;
+  }
+}

@@ -80,6 +80,7 @@ h1 {
   flex-direction: column-reverse;
   color: #000;
   height: calc(100% - 60px - 30px);
+  line-height: 1.6;
 }
 
 // Message
@@ -95,7 +96,7 @@ h1 {
   display: inline-block;
   max-width: 300px;
   padding: 0.2rem 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 .bg-dark {
   background: $blue;

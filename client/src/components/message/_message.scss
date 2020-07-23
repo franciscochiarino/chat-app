@@ -1,0 +1,24 @@
+// Message
+.justify-right {
+  text-align: right;
+  margin-right: 0.5rem;
+}
+.justify-left {
+  text-align: left;
+  margin-left: 0.5rem;
+}
+.message-box {
+  display: inline-block;
+  max-width: 300px;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.2rem;
+}
+.bg-dark {
+  background: $blue;
+  border-radius: 8px 8px 0 8px;
+  color: #fff;
+}
+.bg-light {
+  background: $light-grey;
+  border-radius: 8px 8px 8px 0;
+}

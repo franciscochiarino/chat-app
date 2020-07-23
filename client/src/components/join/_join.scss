@@ -1,0 +1,19 @@
+// Join
+.Join {
+  align-self: center;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+ .join-form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   button {
+     margin-top: 1rem;
+   }
+ }
+}

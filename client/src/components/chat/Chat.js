@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
-import InfoBar from './InfoBar';
-import Input from './Input';
-import Messages from './Messages';
+import InfoBar from '../infobar/InfoBar';
+import Input from '../input/Input';
+import Messages from '../messages/Messages';
 
 const socket = io();
 

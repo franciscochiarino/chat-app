@@ -1,0 +1,8 @@
+// Messages
+.Messages {
+  display: flex;
+  flex-direction: column-reverse;
+  color: #000;
+  height: calc(100% - 60px - 30px);
+  line-height: 1.6;
+}

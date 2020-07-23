@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 
 export default function Message({ message: { user, text }, name }) {
-  // const [isSentByUser, setIsSentByUser] = useState(false);
   const trimmedUser = user.trim();
   const sanitizedUser = trimmedUser[0].toLocaleUpperCase() + user.substring(1).toLocaleLowerCase();
   const trimmedName = name.trim();
@@ -12,7 +11,7 @@ export default function Message({ message: { user, text }, name }) {
   if (sanitizedUser === sanitizedName) {
      isSentByUser = true;
   }
-
+  
   return (
     isSentByUser
     ? (

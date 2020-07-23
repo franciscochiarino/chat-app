@@ -38,7 +38,6 @@ export default function Chat({ name, room, chatWindow, setChatWindow }) {
 
   const sendMessage = e => {
     e.preventDefault();
-    console.log('sendMessage')
     if (text) {
       // Emit SENDMESSAGE
       socket.emit('sendMessage', text, () => {

@@ -2,16 +2,22 @@ const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
 const cors = require('cors');
-const {setCORS} = require('./security');
+const {setCORS} = require('./middlewares/security');
+const indexRoute = require('./routes/indexRoute');
 
 // 0. Import functions from users.js
-const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
+const { addUser, removeUser, getUser } = require('./controllers/usersController');
 
 const PORT = process.env.PORT || 5000;
-
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
+
+// Middleware
+app.use(express.static("client/build"));
+app.use(setCORS);
+app.use(cors());
+app.use('/', indexRoute);
 
 // User joins the chat
 io.on('connection', (socket) => {
@@ -59,8 +65,5 @@ io.on('connection', (socket) => {
   })
 })
 
-app.use(express.static("client/build"));
-app.use(setCORS);
-app.use(cors());
 
 server.listen(PORT, () => console.log(`server running on ${PORT}`));

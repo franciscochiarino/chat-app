@@ -45,6 +45,9 @@ export default function Chat({ name, room, chatWindow, setChatWindow }) {
         setText('');
       })
     }
+    if (messages.length >= 50) {
+      removeFirst();
+    } 
   };
 
   const removeFirst = () => {

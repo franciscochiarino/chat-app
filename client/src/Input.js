@@ -12,7 +12,7 @@ export default function Input({ text, setText, sendMessage }) {
   return (
     <>
       { emojiWindow ? 
-        <Picker className="Picker" set="apple" theme="light" style={{fontFamily: 'initial'}} onSelect={emoji => setText(text + emoji.native)} />
+        <Picker className="Picker" set="apple" theme="light" style={{fontFamily: 'initial'}} onSelect={emoji => setText(text + ` ${emoji.native} `)} />
       : null }
       <div className="Input">
         <form onSubmit={sendMessage} className="chat-form">

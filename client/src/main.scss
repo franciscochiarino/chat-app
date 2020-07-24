@@ -21,6 +21,7 @@ h1 {
   font-size: 1.5rem;
 }
 
+@import "./animation";
 @import "./components/app/app";
 @import "./components/join/join";
 @import "./components/infobar/infobar";

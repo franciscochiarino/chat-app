@@ -13,6 +13,7 @@
   padding: 0.2rem 0.5rem;
   margin-bottom: 0.2rem;
   overflow-wrap: break-word;
+  animation: slide-in-bottom 400ms ease;
 }
 .bg-dark {
   background: $blue;
@@ -26,3 +27,4 @@
 .sent-text {
   font-size: 0.8rem;
 }
+

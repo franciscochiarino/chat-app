@@ -38,8 +38,8 @@
 .emoji-mart {
   position: absolute;
   bottom: $input-height;
+  animation: fade-in 300ms ease;
 }
-
 .emoji-mart-preview {
   display: none;
 }

@@ -1,4 +1,4 @@
-# Chat App
+# [Chat App](https://chat-app-fran.herokuapp.com/)
 A simple real time chat application built with Socket.io
 
 ## General Info
